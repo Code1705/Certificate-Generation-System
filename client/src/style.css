@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.certificate-form,
+.certificate-list {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.certificate-form h2,
+.certificate-list h2 {
+  text-align: center;
+}
+.certificate-form input,
+.certificate-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+.certificate-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.certificate-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.certificate-list ul {
+  list-style: none;
+  padding: 0;
+}
+.certificate-list li {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.certificate-list li a {
+  color: #007bff;
+  text-decoration: none;
+}
