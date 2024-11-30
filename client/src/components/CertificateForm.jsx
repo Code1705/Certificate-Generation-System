@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createCertificate } from "../api/api";
-import "../styles/form.css";
+import '../styles/form.css';
 
 const CertificateForm = () => {
   const [name, setName] = useState("");
