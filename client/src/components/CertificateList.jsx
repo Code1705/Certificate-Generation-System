@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCertificates } from "../api/api";
-import "../styles/list.css";
+import '../styles/list.css';
 
 const CertificateList = () => {
   const [certificates, setCertificates] = useState([]);
