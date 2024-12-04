@@ -2,8 +2,9 @@ import PDFDocument from "pdfkit";
 import fs from "fs";
 import sizeOf from "image-size";
 
-const generateCertificatePDF = async (name) => {
-  const imagePath = "utils/certificate_template.png";
+const generateCertificatePDF = async (name, date) => {
+  const imagePath = "utils/certificate_template.jpg";
+  const signature = "Aditya Samanta";
 
   if (!fs.existsSync(imagePath)) {
     console.error(`File not found: ${imagePath}`);
@@ -44,8 +45,9 @@ const generateCertificatePDF = async (name) => {
 
     doc.image(imagePath, 0, 0, { width: imageWidth, height: imageHeight });
 
-    doc.font(fontPath).fontSize(60).fillColor("blue").text(name, 650, 360);
-
+    doc.font(fontPath).fontSize(60).fillColor("blue").text(name, 540, 480);
+    doc.font(fontPath).fontSize(60).fillColor("blue").text(date, 120, 740);
+    doc.font(fontPath).fontSize(60).fillColor("blue").text(signature, 800, 740);
     doc.end();
   });
 };

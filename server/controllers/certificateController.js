@@ -4,11 +4,12 @@ import generateCertificatePDF from "../utils/pdfGenerator.js";
 
 export const createCertificate = async (req, res) => {
   try {
-    const { name, email } = req.body;
-    await generateCertificatePDF(name);
+    const { name, email, date } = req.body;
+    await generateCertificatePDF(name, date);
+    // console.log(date);
     const fileId = await uploadToGoogleDrive(name);
     const fileLink = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
-    const newCertificate = new Certificate({ name, email, fileLink });
+    const newCertificate = new Certificate({ name, email, date, fileLink });
     await newCertificate.save();
     res.status(201).json(newCertificate);
   } catch (error) {
